@@ -1,3 +1,23 @@
+// Переменные для брейкпоинтов
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-large-desktop: 1200px;
+
+// Миксины для адаптивности
+@mixin hero-font-size($default, $tablet, $mobile) {
+  font-size: $default;
+
+  @media (max-width: $breakpoint-desktop) {
+    font-size: $tablet;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $mobile;
+  }
+}
+
+// Основные стили
 .header {
   .top-bar {
     background-color: $background-color;

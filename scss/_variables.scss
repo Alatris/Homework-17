@@ -1,8 +1,9 @@
 :root {
-  $primary-color: #1A7DF0;
-  $secondary-color: #FFE711;
-  $text-color: #333333;
-  $background-color: #FFFFFF;
+  --color-blue: #1A7DF0;
+  --color-white: #ffffff;
+  --color-yellow: #FFE711;
+  --color-blue0dark: #005BC5;
+  --color-black: #333333;
   $font-family: 'raleway';
 
   $breakpoint-xs: 480px;
