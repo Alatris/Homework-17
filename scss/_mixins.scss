@@ -1,0 +1,74 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@mixin responsive($property, $xs, $sm, $md, $lg, $xl) {
+  #{$property}: $xs;
+
+  @media (min-width: $breakpoint-sm) {
+    #{$property}: $sm;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    #{$property}: $md;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    #{$property}: $lg;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    #{$property}: $xl;
+  }
+}
+
+@mixin button($background-color, $hover-color) {
+  background-color: $background-color;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+@mixin hero-font-size($xs, $sm, $md, $lg, $xl) {
+  font-size: $xs;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: $sm;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $md;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $lg;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $xl;
+  }
+}

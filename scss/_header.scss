@@ -1,0 +1,142 @@
+.header {
+  .top-bar {
+    background-color: $background-color;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+
+    .container {
+      @include flex-space-between;
+      @include container;
+    }
+
+    .logo img {
+      max-width: 100px;
+    }
+
+    .contact-info,
+    .social-media,
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-info {
+      a, address {
+        color: $text-color;
+        font-size: 0.9rem;
+      }
+    }
+
+    .social-media a img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .navigation-bar {
+    background-color: $primary-color;
+    padding: 10px 0;
+
+    .container {
+      @include container;
+    }
+
+    .navigation {
+      ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        li a {
+          color: white;
+          font-size: 1rem;
+          padding: 5px 10px;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .hero-section {
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+
+    h1 {
+      @include hero-font-size(2.5rem, 2rem, 1.8rem);
+      margin-bottom: 10px;
+    }
+
+    p {
+      @include hero-font-size(1.2rem, 1rem, 0.9rem);
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      .btn {
+        @include button($primary-color, darken($primary-color, 10%));
+
+        &.btn-secondary {
+          @include button($secondary-color, darken($secondary-color, 10%));
+        }
+      }
+    }
+  }
+}
+
+// Медиа-запросы для адаптивности
+@media (max-width: $breakpoint-desktop) {
+  .header {
+    .hero-section h1 {
+      @include hero-font-size(2rem, 1.8rem, 1.5rem);
+    }
+
+    .hero-section p {
+      @include hero-font-size(1rem, 0.9rem, 0.8rem);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .header {
+    .top-bar .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .navigation-bar .navigation ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-section h1 {
+      @include hero-font-size(1.8rem, 1.5rem, 1.2rem);
+    }
+
+    .hero-section p {
+      @include hero-font-size(0.9rem, 0.8rem, 0.7rem);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .header {
+    .hero-section h1 {
+      @include hero-font-size(1.5rem, 1.2rem, 1rem);
+    }
+
+    .hero-section p {
+      @include hero-font-size(0.8rem, 0.7rem, 0.6rem);
+    }
+  }
+}
