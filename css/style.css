@@ -493,7 +493,7 @@ body {
 .title__item {
   color: var(--color-white);
   font-size: 65px;
-  line-height: 76px;
+  line-height: 4.75;
   font-weight: 500;
 }
 .title__par {
